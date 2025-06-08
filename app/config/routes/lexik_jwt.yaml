@@ -1,0 +1,4 @@
+# config/routes/lexik_jwt.yaml
+lexik_jwt_login:
+    path: /api/v1/auth/login
+    controller: lexik_jwt_authentication.controller.authentication::getToken

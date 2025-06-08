@@ -16,5 +16,10 @@ services:
     App\:
         resource: '../src/'
 
-    # add more service definitions when explicit configuration is needed
-    # please note that last definitions always *replace* previous ones
+
+    App\EventListener\ApiExceptionListener:
+        tags:
+            - { name: kernel.event_listener, event: kernel.exception }
+    App\EventListener\ForceJsonResponseListener:
+        tags:
+            - { name: kernel.event_listener, event: kernel.request, method: onRequestEvent }
